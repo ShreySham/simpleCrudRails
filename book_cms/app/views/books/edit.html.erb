@@ -1,0 +1,24 @@
+<h2 class='content'>Update a Book</h2>
+
+
+<%= form_for(@book) do |form| %>  
+    
+      <%= form.label :title %> 
+      <%= form.text_field(:title, value: @book.title.to_s) %>
+  
+      <%= form.label :author %> 
+      <%= form.text_field(:author) %>
+  
+      <%= form.label :genre %>
+      <%= form.select("genre", @genres, {index: nil}) %>
+      <%#= form.text_field(:genre) %>
+  
+      <%= form.label :price %> 
+      <%= form.number_field :price, step: :any %>
+
+      <%= form.label :published_date%>
+      <%= form.date_field(:published_date, :value => @book.published_date.to_s.to_date) %>     
+      <%= form.submit("Update Book") %>
+
+
+  <% end %> 
