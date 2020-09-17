@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BookCms</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header class='clearfix'>
+  <div class="left-nav">
+    <ul>
+      <li><%= link_to('Home', {:action => 'index'}) %></li>
+      <li><%= link_to("Add New Book", {:action => 'new'}) %></li>
+
+  </div>
+</header>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
